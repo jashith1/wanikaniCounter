@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "wanikani counter",
-	"version": "0.1",
+	"version": "1.0",
 
 	"description": "counts remaining wanikani items on levels",
 	"homepage_url": "https://github.com/jashith1/wanikaniCounter",
@@ -17,11 +17,5 @@
 	"icons": {
 		"48": "wanikani.jpg",
 		"96": "wanikani.jpg"
-	},
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "gitBot69420@gmail.com",
-			"strict_min_version": "89.0"
-		}
 	}
 }
