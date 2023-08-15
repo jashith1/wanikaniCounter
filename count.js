@@ -1,7 +1,3 @@
-let currentLevelPage = $('.page-header .page-header__title-subtext').text();
-currentLevelPage = Number(currentLevelPage.substring(7, currentLevelPage.indexOf('-')));
-console.log(currentLevelPage);
-
 $('.container .character-grid .character-grid__items').each((index, level) => {
 	let incompleteItems = 0;
 	let completedItems = 0;
@@ -25,5 +21,21 @@ $('.container .character-grid .character-grid__items').each((index, level) => {
 			else if (status == 'recent') completedItems++;
 			else console.log('unkown elememt ' + status);
 		});
-	console.log(`Level ${currentLevelPage + index} : ${completedItems} completed, ${incompleteItems} incomplete, ${burnedItems} burned, total ${completedItems + incompleteItems + burnedItems}`);
+
+	completedItems += burnedItems;
+
+	const gridElement = $(`.container .character-grid:eq('${index}') `);
+	gridElement.find('header').css('padding-bottom', '0px');
+
+	const levelProgressHeader = $('<header></header>')
+		.addClass('subject-legend')
+		.css({
+			'padding-top': '0px',
+			'padding-bottom': '20px',
+			'margin-bottom': '0px',
+		})
+		.append($(`<h4>Completed: ${completedItems}</h4>`))
+		.append($(`<h4>Incomplete: ${incompleteItems}</h4>`))
+		.append($(`<h4>Burned: ${burnedItems}</h4>`));
+	gridElement.children().eq(1).after(levelProgressHeader);
 });
