@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "wanikani counter",
+	"version": "0.1",
+
+	"description": "counts remaining wanikani items on levels",
+	"homepage_url": "https://github.com/jashith1/wanikaniCounter",
+
+	"content_scripts": [
+		{
+			"matches": ["https://www.wanikani.com/radicals*", "https://www.wanikani.com/kanji*", "https://www.wanikani.com/vocabulary*"],
+			"js": ["jquery.js", "count.js"],
+			"run_at": "document_end"
+		}
+	],
+
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "gitBot69420@gmail.com",
+			"strict_min_version": "89.0"
+		}
+	}
+}
