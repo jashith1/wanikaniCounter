@@ -14,6 +14,10 @@
 		}
 	],
 
+	"icons": {
+		"48": "wanikani.jpg",
+		"96": "wanikani.jpg"
+	},
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "gitBot69420@gmail.com",
